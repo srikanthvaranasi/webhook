@@ -12,8 +12,11 @@ runtime_input = st.text_input("Enter pipeline runtime to send to the AI Response
 # Input Box for Organization Name (OrgName)
 org_name = st.text_input("Enter the Organization Name (OrgName):")
 
-# Input Box for POD with full path
-pod_path = st.text_input("Enter POD with full path:")
+# Dropdown for POD path with full path
+pod_path = st.selectbox(
+    "Select POD path:", 
+    options=["https://elastic.snaplogic.com", "https://uat.elastic.snaplogic.com"]
+)
 
 # Webhook URL
 webhook_url = "https://elastic.snaplogic.com/api/1/rest/slsched/feed/QA/qa_diagnostic_space/GenAI_diagnostic/triggerErrorAnalysisTask?bearer_token=abc"  # Replace with your actual webhook URL
